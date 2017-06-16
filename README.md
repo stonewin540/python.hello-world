@@ -2,3 +2,5 @@
 # shortcut from Xcode @https://github.com/pitzcarraldo/IntelliJ-IDEA-Xcode-Keymap
 # and some modify by me
 # Keymap_Xcode.xml that it is
+# 
+# All examples from http://www.runoob.com/python/python-tutorial.html
