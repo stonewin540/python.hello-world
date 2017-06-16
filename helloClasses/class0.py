@@ -101,12 +101,29 @@ class Vector:
 
 class JustCounter:
     def __init__(self):
+        self._protectedCount = 0     # is it protected?
         pass
 
-    __secretCount = 0
+    __secretCount = 0       # it is private
+    # _protectedCount = 0     # it is protected
     publicCount = 0
 
     def count(self):
         self.__secretCount += 1
         self.publicCount += 1
+        self._protectedCount += 1
         print self.__secretCount
+
+        print 'I will perform the private method...'
+        self.__this_is_private_method()
+
+    def __this_is_private_method(self):
+        print self.__this_is_private_method.im_func.func_name
+
+
+class SubJustCounter(JustCounter):
+    def __init__(self):
+        JustCounter.__init__(self)
+
+    def show_the_protected(self):
+        print 'This is protected:', self._protectedCount

@@ -124,3 +124,28 @@ except AttributeError as anError:
     print anError
 else:
     print 'OK'
+print 'Safe here'
+print 'counter._JustCounter__secretCount it works'
+print counter._JustCounter__secretCount
+print 'but deprecated'
+
+print 'Let us try the private method out'
+try:
+    counter.__this_is_private_method()
+except Exception as anError:
+    print 'Error occurred:', anError
+else:
+    print 'OK'
+
+print 'Just list private variable, counter._JustCounter__this_is_private_method()'
+counter._JustCounter__this_is_private_method()
+
+
+print '\n\nSubJustCounter init'
+counter = SubJustCounter()
+counter.count()
+counter.count()
+print 'counter.publicCount:', counter.publicCount
+print 'counter._JustCounter__secretCount:', counter._JustCounter__secretCount
+counter.show_the_protected()
+print 'practise'
